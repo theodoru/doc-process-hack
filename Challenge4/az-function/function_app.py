@@ -8,7 +8,8 @@ from model_loanagreements import model_loanagreements
 
 app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 
-@app.blob_trigger(arg_name="myblob", path="data/loanagreements/{name}",
+@app.blob_trigger(arg_name="myblob", path="data/loan" \
+"agreements/{name}",
                                connection="STORAGE_CONNECTION_STRING")
 @app.cosmos_db_output(arg_name="outputDocument",
                       database_name="ContosoDB",
